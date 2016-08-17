@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>手机端</title>
+    <style>
+        *{padding:0;margin:0;font-size:1rem;}
+        html{
+            font-size:62.5%;
+        }
+        .nav{width:100%;background-color:#1facee;height:3rem;position:fixed;top:0;left:.8rem;z-index:4;}
+        .nav ul{list-style: none;}
+        .nav ul li{width:33.333%;float:left;text-align: center;color:#fff;line-height: 3rem;}
+        .content{width:100%;margin-top:5rem;/*margin-left:.8rem;*/position: absolute;left:.8rem;z-index:1;}
+        .sub_nav{width:100%;border-bottom:.05rem solid #1facee;margin-top:.5rem;}
+        .sub_nav li{width:30%;line-height: 2rem;background-color:#1facee;text-align:center;color:#fff;list-style: none;font-size:.8rem;}
+        .left{width:10rem;height:100%;position:fixed;left:-9.2rem;top:0;background-color:#1facee;z-index:5;}
+        .left ul li{width:100%;height:3rem;line-height:3rem;text-align:center;list-style:none;color:#fff;border-top:.05rem solid #fff;cursor:pointer;}
+        .left ul li:hover{background-color:#519cdd;}
+        .left .logo{  width:100%;height:8rem;}
+        .left .logo p{width:4rem;height:4rem;border-radius:50%;overflow:hidden;margin:2rem auto 1rem auto;border:.1rem solid #ccc;}
+        .left .logo p img{border-radius:50%;width:3rem;height:3rem;margin:.5rem 0 0 .5rem;}
+        .left .logo span{display:inline-block;text-align: center;width:100%;color:#fff;}
+        .form{width:20rem;;}
+        .form p{width:100%;line-height:2rem;}
+        .form span{width:5.5rem;display:inline-block;font-size:.8rem;padding:0 .5rem;}
+        .form input{width:7.5rem;height:1rem;display:inline-block;font-size:.8rem;}
+        .btn{width:6rem;height:3rem;margin:1rem auto;}
+        .btn a{display:inline-block;width:5rem;height:2rem; text-align: center;line-height: 2rem;background-color:#1facee;color:#fff;text-decoration: none;border-radius:.5rem;}
+        /*.menu{width:2rem;height:2rem;border-radius:50%;background-color:#1facee;color:#fff;text-align: center;font-size: .8rem;line-height: 2rem;position:fixed;left:0;top:50%;}*/
+        .sidebar{width:.8rem;height:100%;position:fixed;left:0;top:0;background-color:#1f9cdd;}
+        .sidebar a{display:inline-block;  width:1rem;height:4.2rem;background-color:#1f9cdd;border-radius:.5rem;position:fixed;top:50%;padding:1.1rem .1rem;text-align: center;}
+        .sidebar a img{padding:2rem 0;}
+        .sidebar a.put{display:none;}
+        .sidebar a:hover,.btn a:hover{background-color:#519cdd;}
+        table{width:100%;border:1px solid #ccc;}
+        table thead{background-color:#1facee;}
+        table thead tr th,table tbody tr td{font-size:.8rem;text-align: center;color:#fff;}
+        table tbody tr td{border-right:1px solid #ccc;color:#666;}
+        table tbody tr td:last-child{border-right:none;}
+        /*@media only screen and (min-width:320px){html{font-size:1.2rem!important}}*/
+        /*@media only screen and (min-width:540px){html{font-size:1.5rem!important}}*/
+        /*@media only screen and (min-width:768px){html{font-size:2rem!important}}*/
+    </style>
+    <!--<script>-->
+        <!--window.onload = function() {-->
+            <!--var iWidth=document.documentElement.getBoundingClientRect().width;-->
+            <!--document.getElementsByTagName("html")[0].style.fontSize=iWidth/16+"px";-->
+        <!--}-->
+    <!--</script>-->
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>用户中心</li>
+            <li>B2B平台</li>
+            <li>支付中心</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="sub_nav">
+            <ul>
+                <li>用户信息</li>
+            </ul>
+        </div>
+        <div class="form">
+            <p>
+                <span>产品编号：</span>
+                <input type="text" placeholder="请输入产品编号"/>
+            </p>
+            <p>
+                <span>产品名称：</span>
+                <input type="text" placeholder="请输入产品编号"/>
+            </p>
+            <p>
+                <span>供应商名称：</span>
+                <input type="text" placeholder="请输入产品编号"/>
+            </p>
+            <p>
+                <span>管理地区：</span>
+                <input type="text" placeholder="请输入产品编号"/>
+            </p>
+            <div class="btn">
+                <a href="javascript:;" type="submit">提交</a>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>展示名称</th>
+                    <th>展示位置</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>01</td>
+                <td>北京一日游</td>
+                <td>推荐</td>
+                <td>
+                    <a href="javascript:;">编辑</a>
+                    <a href="javascript:;">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+<div class="left">
+    <div class="logo">
+        <p>
+            <img src="images/img-1.png" alt=""/>
+        </p>
+        <span>B2B</span>
+    </div>
+    <ul>
+        <li>订单中心</li>
+        <li>产品中心</li>
+        <li>平台管理</li>
+        <li>平台优惠</li>
+        <li>结算相关</li>
+        <li>中性品牌</li>
+    </ul>
+    <div class="sidebar">
+        <a class="put" href="javascript:;"><img src="images/shouqi.png" alt=""/></a>
+        <a class="push" href="javascript:;"><img src="images/tanchu.png" alt=""/></a>
+    </div>
+</div>
+
+
+<!--<div class="menu">-->
+    <!--菜单-->
+<!--</div>-->
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+
+$(function(){
+    $(".sidebar a.put").click(function(){
+        $(".left").animate({"left":"-10rem"},200);
+        $(".sidebar").animate({"left":"0"},200);
+        $(".content").animate({left:".8rem"},200);
+        $(".nav").animate({"left":".8rem"},200);
+        $(".sidebar a.push").css({"display":"block"});
+        $(".sidebar a.put").css({"display":"none"});
+    })
+    $(".sidebar a.push").click(function(){
+        $(".left").animate({"left":"0"},200);
+        $(".sidebar").animate({"left":"9.2rem"},200);
+        $(".content").animate({"left":"10rem"},200);
+        $(".nav").animate({"left":"10rem"},200);
+        $(".sidebar a.put").css({"display":"block"});
+        $(".sidebar a.push").css({"display":"none"});
+    })
+})
+
+
+    </script>
+
+</body>
+</html>
