@@ -11,7 +11,7 @@ html{
 }
 #qq{
 	width: 15.0rem	;
-	height:4.25rem;
+	height:auto;
 	background-color:#fff;
 	margin:1.25rem auto 0.75rem;
 	border-radius:5px;
@@ -24,7 +24,8 @@ html{
 }
 #qq .message{
 	width:14.0rem;
-	height:1.75rem;
+	height:auto;
+	font-size:0.35rem;
 	margin:0 auto;
 	outline:none;
 	border:1px solid #ddd;
