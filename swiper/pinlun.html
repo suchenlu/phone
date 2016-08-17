@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+	<title>评论</title>
+	<link rel="stylesheet" type="text/css" href="css/pinlun.css">
+	
+ 
+</head>
+<body>
+<div id="qq">
+	<p>有话就说</p>
+	<div class="message" contentEditable='true'></div>
+	<div class="but">
+		<img src="images/17.gif" class="bq">
+		<span class="submit">发表</span>
+		<div class="face">
+			<ul>
+				<li><img src="images/01.gif" alt=""></li>
+				<li><img src="images/2.gif" alt=""></li>
+				<li><img src="images/3.gif" alt=""></li>
+				<li><img src="images/4.gif" alt=""></li>
+				<li><img src="images/5.gif" alt=""></li>
+				<li><img src="images/6.gif" alt=""></li>
+				<li><img src="images/7.gif" alt=""></li>
+				<li><img src="images/8.gif" alt=""></li>
+				<li><img src="images/9.gif" alt=""></li>
+				<li><img src="images/10.gif" alt=""></li>
+				<li><img src="images/11.gif" alt=""></li>
+				<li><img src="images/12.gif" alt=""></li>
+				<li><img src="images/13.gif" alt=""></li>
+				<li><img src="images/14.gif" alt=""></li>
+				<li><img src="images/15.gif" alt=""></li>
+				<li><img src="images/16.gif" alt=""></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="time1"></div>
+<div class="msgCon"></div>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<!--    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script> -->
+<script type="text/javascript">
+	$(".bq").click(function(e){
+		$(".face").slideDown();
+		e.stopPropagation();
+	});
+	$(document).click(function(){
+		$(".face").slideUp();
+	})
+	$(".face ul li").click(function(){
+		var simg=$(this).find("img").clone();
+		$(".message").append(simg);
+	});
+	$("span.submit").click(function(){
+		var txt=$(".message").html();
+		if(txt==""){
+			$('.message').focus();
+			return;
+		}
+		$(".msgCon").prepend("<div class='msgBox'><dl><dt><img src='images/17.png' width:'50px';height:'50px'/></dt><dd>路过</dd></dl><div class='msgTxt'>"+txt+"</div></div>");
+	});
+</script>
+<script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>
