@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>练习swiper插件</title>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper1.css">
+</head>
+<body>
+
+        <div class="swiper-container swiper-container-horizontal">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide blue-slide">Slider-1</div>
+                <div class="swiper-slide red-slide">Slider-2</div>
+                <div class="swiper-slide orange-slide">Slider-3</div>
+                <div class="swiper-slide black-slide">Slider-4</div>
+                <div class="swiper-slide white-slide">Slider-5</div>
+                <div class="swiper-slide green-slide">Slider-6</div>
+            </div>
+            <!--<div class="swiper-pagination  swiper-pagination-clickable swiper-pagination-bullets">-->
+                <!--<span class="swiper-pagination-bullet"></span>-->
+                <!--<span class="swiper-pagination-bullet"></span>-->
+                <!--<span class="swiper-pagination-bullet"></span>-->
+                <!--<span class="swiper-pagination-bullet"></span>-->
+                <!--<span class="swiper-pagination-bullet"></span>-->
+                <!--<span class="swiper-pagination-bullet"></span>-->
+                <!--<span class="swiper-pagination-bullet"></span>-->
+
+            <!--</div>-->
+            <div class="swiper-scrollbar"></div>
+    </div>
+        <button id="btn">销毁swiper</button>
+
+
+
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script type="text/javascript">
+           var Swiper=new Swiper('.swiper-container',{
+//               pagination:'.swiper-pagination',
+//               paginationClickable: true,
+//               grabCursor:true,
+//               loop:true,
+//                freeMode:true,
+//               freeModeMomentum:false,
+//               freeModeMomentumRatio:3
+//               freeModeMomentumBounce:false
+//               freeModeSticky:true,
+//               simulateTouch:true,
+//               shortSwipes:false
+//               scrollbar:'.swiper-scrollbar',
+//               scrollbarHide:false,
+//               scrollbarDraggable:true,
+//               keyboardControl:true
+//               watchSlidesProgress:true,
+//               onProgress:function(swiper,progress){
+//                   for(var i=0;i<swiper.slides.length;i++){
+//                       var slide=swiper.slides[i];
+//                       es=slide.style;
+//                       es.webkitTransform=es.MsTransform=es.msTransform=es.MozTransform=es.OTransform=es.transform='rotate('+360*slide.progress+'deg)';
+//                   }
+//               }
+//               onDestory:function(swiper){
+//                   alert('销毁');
+//               }
+
+           });
+//        $('#btn').click(function(){
+//            Swiper.destroy(false);
+//        })
+        Swiper.removeSlide(2);
+    </script>
+     <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>
