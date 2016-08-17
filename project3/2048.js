@@ -352,7 +352,7 @@ isGameOver:function(){//判断游戏是否结束
 //当窗口加载后，调用game对象的start方法
 window.onload=function(){//事件处理函数
 	game.start();
-	document.onkeydown=function(){
+	document.touchmove=function(){
 		//Step1：先活动事件对象！
 //所有事件发生时，都自动创建一个event对象
 //event对象中封装了事件信息：
