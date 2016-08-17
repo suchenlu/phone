@@ -93,6 +93,8 @@ html{
 }
 .msgCon .msgBox dl dt img{
 	border-radius: 25px;
+	width:100%;
+	height:100%;
 }
 .msgCon .msgBox dl dd{
 	width:12.5rem;
