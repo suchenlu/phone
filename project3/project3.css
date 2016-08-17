@@ -6,7 +6,7 @@ html{
 		font-size:100px;
 	}
 	#gridPanel{
-			word-wrap: 12.0rem;
+			width: 12.0rem;
 			height:12.0rem;
 			margin:0 auto;
 			background-color:#bbada0;
