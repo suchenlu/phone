@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="css/idangerous.swiper.css">
+    <link rel="stylesheet" type="text/css" href="css/update.css">
+    <title>下拉更新</title>
+    <!-- <style>
+        /**{margin:0;padding:0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}*/
+        /*body{*/
+            /*position:relative;*/
+            /*height:100%;*/
+        /*}*/
+        html {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            line-height: 1.5;
+            position: relative;
+            height: 100%;
+            background: #333;
+            box-shadow: 0px 0px 100px #000 inset;
+        }
+        .preloader{
+            position:absolute;
+            left:0;
+            top:-100px;
+            z-index:0;
+            color:#fff;
+            text-align: center;
+            line-height: 100px;
+            height:100px;
+            width:100%;
+            opacity:0;
+            font-size:25px;
+            -webkit-transition: 300ms;
+            -moz-transition: 300ms;
+            -o-transition: 300ms;
+            transition: 300ms;
+            background:#000;\9
+            background:rgba(0,0,0,0.1);
+        }
+        .preloader.visible{
+            top:0;
+            opacity:1;
+        }
+        .swiper-container{
+            width:100%;
+            height:100%;
+            color:#fff;
+            text-align: center;
+            position:relative;
+            z-index:10;
+        }
+
+        .swiper-slide{
+            height:100px;
+            width:100%;
+            line-height: 100px;
+            opacity:0.2;
+            -webkit-transition: 300ms;
+            -moz-transition: 300ms;
+            -o-transition: 300ms;
+            transition: 300ms;
+            /*background-color:#f00;*/
+        }
+        .red-slide{background-color:#f00;}
+        .blue-slide{background-color:#0000f6;}
+        .green-slide{background-color:#00fa00}
+        .pink-slide{background-color:#ffc0cb;}
+        .orange-slide{background-color:#ff4500;}
+
+        .swiper-slide-visible{
+            opacity:1;
+        }
+        .swiper-slide .title{
+            font-style: italic;
+            font-size: 42px;
+        }
+    </style> -->
+</head>
+<body>
+    <div class="preloader">loading...</div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+           <div class="swiper-slide red-slide">
+               <div class="title">slide1</div>
+           </div>
+            <div class="swiper-slide blue-slide">
+                <div class="title">slide2</div>
+            </div>
+            <div class="swiper-slide orange-slide">
+                <div class="title">slide3</div>
+            </div>
+            <div class="swiper-slide green-slide">
+                <div class="title">slide4</div>
+            </div>
+            <div class="swiper-slide pink-slide">
+                <div class="title">slide5</div>
+            </div>
+            <div class="swiper-slide red-slide">
+                <div class="title">slide6</div>
+            </div>
+            <div class="swiper-slide blue-slide">
+                <div class="title">slide7</div>
+            </div>
+            <div class="swiper-slide orange-slide">
+                <div class="title">slide8</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/idangerous.swiper.min.js"></script>
+    <script type="text/javascript">
+        var holdPosition=0;
+        var mySwiper=new Swiper('.swiper-container',{
+            slidesPerView:'auto',
+            mode:'vertical',
+            watchActiveIndex:true,
+            onTouchStart:function(){
+                holdPosition=0;
+            },
+            onResistanceBefore:function(s,pos){
+                holdPosition=pos;
+            },
+            onTouchEnd:function(){
+                if(holdPosition>100){
+                    mySwiper.setWrapperTranslate(0,100,0);
+                    mySwiper.params.onlyExternal=true;
+                    $('.preloader').addClass('visible');
+                    loadNewSlides();
+                }
+            }
+        })
+        var slideNumber=0;
+        function loadNewSlides(){
+            setTimeout(function(){
+                var colors=[' red',' blue',' green',' pink'];
+                var color=colors[Math.floor(Math.random()*colors.length)];
+                mySwiper.prependSlide('<div class="title">sucaijiayuan.com'+slideNumber+'</div>','swiper-slide'+color+'-slide');
+                mySwiper.setWrapperTranslate(0,0,0);
+                mySwiper.params.onlyExternal=false;
+                mySwiper.updateActiveSlide(0);
+                $('.preloader').removeClass('visible');
+            },1000);
+            slideNumber++;
+        }
+    </script>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>
