@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+	<title>红包</title>
+	<link rel="stylesheet" type="text/css" href="css/red-packets.css">
+	<style type="text/css">
+		.body{
+			min-height:100%;
+		}
+		.body::after{
+			background:#000 url(images/bg.jpg) no-repeat center;
+			background-size:100% 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="body">
+		<div class="crush"></div>
+		<dl class="main">
+			<dt>给你发一个红包</dt>
+			<dd><img src="images/packet.png" alt=""></dd>
+		</dl>
+	</div>
+</body>
+<audio class="audio" src="http://zl.vipoj.com/bh/images/foolredpacket/crush0.mp3" preload="auto"></audio>
+<audio class="audio" src="http://zl.vipoj.com/bh/images/foolredpacket/crush1.mp3" preload="auto"></audio>
+<audio class="audio" src="http://zl.vipoj.com/bh/images/foolredpacket/crush2.mp3" preload="auto"></audio>
+<input type="hidden" name="" id="urltype" value="1">
+<input type="hidden" name="" id="followurl" value="">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+	var count=0;
+	$('.crush').click(function(e){
+		$('.audio')[count%3].play();
+		$(this).attr("style","background:rgba(0,0,0,0.5);");
+		$(this).append('<img style="left:'+e.pageX+'px;top:'+e.pageY+'px" src="images/crush'+(count%3)+'.png"/>');
+		count++;
+		if(count==3){
+			setTimeout("prompt()",1000);
+		}
+	});
+	function share(){
+		if($('#urltype').val()=='0'){
+			window.location.href=$('#followurl').val();
+			return;
+		}
+		$('body').append('<div class="share" onclick="remove(this)">\<img src="images/share1.png"/>\<div class="clear"></div>\<p class="tr">点击右上角</p>\<p class="tr">发给你要整蛊的人</p></div>')
+	}
+	function prompt(){
+		$('body').append('<div class="prompt">\<div class="cont">\<div class="space_30"></div>\<p>只是一个玩笑</p>\<div class="space_30"></div>\<a class="btn" onclick="share()">我也要整蛊</a>\</div>\<div class="bg"></div>\</div>')
+	}
+</script>
+<script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</html>
