@@ -3,9 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>全屏</title>
-	<meta name="viewport" content="width=device-width initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
-	<style type="text/css">
+	<!-- <style type="text/css">
 		.section1{
 			background:url('images/pic_1.png') no-repeat center;
 		}
@@ -24,7 +28,7 @@
 		.section6{
 			background:url('images/pic_6.png') no-repeat center;
 		}
-	</style>
+	</style> -->
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.10.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
@@ -55,12 +59,26 @@
 	</script>
 </head>
 <body>
-	<div class="section section1"></div>
-	<div class="section section2"></div>
-	<div class="section section3"></div>
-	<div class="section section4"></div>
-	<div class="section section5"></div>
-	<div class="section section6"></div>
-	
+	<div class="section section1"><img src="images/pic_1.png"></div>
+	<div class="section section2"><img src="images/pic_2.png"></div>
+	<div class="section section3"><img src="images/pic_3.png"></div>
+	<div class="section section4"><img src="images/pic_4.png"></div>
+	<div class="section section5"><img src="images/pic_5.png"></div>
+	<div class="section section6"><img src="images/pic_6.png"></div>
+	<script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
 </body>
 </html>
