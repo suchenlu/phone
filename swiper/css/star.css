@@ -107,7 +107,7 @@ a{
 	background:#ccc;
 	margin:0px auto;
 	border-left:#666 5px solid;
-	width:10.0rem;
+	width:15.0rem;
 	border-bottom:#666 5px solid;
 }
 #box H4 {
@@ -183,8 +183,8 @@ address {
 }
 #doPoint span {
 	display:block;background:url(../images/star_small.gif) no-repeat 2px 0px;
-	width:3.0rem;
-	height:0.5rem;
+	width:5.0rem;
+	height:0.8rem;
 }
 #doPoint span small {
 	font-size:0px;
@@ -231,7 +231,10 @@ form{
 form label {
 	display:block;
 	margin:0.125rem 0px;
+	font-size:0.8rem;
 }
 form textarea {
 	width:8.75rem;
+	min-height:0.8rem;
+	height:auto;
 }
