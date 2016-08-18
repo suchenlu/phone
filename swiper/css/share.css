@@ -1,0 +1,133 @@
+*{
+	margin:0;
+	padding:0;
+}
+li{
+	list-style: none;
+}
+a,i,b,s{
+	font-style: normal;
+	text-decoration: none;
+}
+.mark{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background-color:#000;
+	opacity:0.4;
+	filter:Alpha(opacity=60);
+	z-index:1001;
+}
+.share-dialog{
+	position:fixed;
+	left:50%;
+	top:50%;
+	width:12.5rem;
+	height:6.75rem;
+	margin:-3.375rem 0 0 -6.25rem;
+	background:#fff;
+	z-index:1002;
+}
+.share-dialog .share-close{
+	position:absolute;
+	right:0.175rem;
+	top:0.25rem;
+	width:0.65rem;
+	height:0.65rem;
+	line-height:0.65rem;
+	display:inline-block;
+	cursor:pointer;
+	font-size:0.5rem;
+}
+.share-dialog .share-dialog-title{
+	height:1.125rem;
+	line-height:1.125rem;
+	text-indent: 0.375rem;
+	background:#eee;
+}
+.share-dialog .share-dialog-cont{
+	padding:0.95rem 0.5rem;
+	font-size:0.35rem;
+}
+.share-dialog .share-copy-l{
+	float:left;
+	width:1.925rem;
+	margin-top:0.2rem;
+}
+.share-dialog .share-copy-c{
+	float:left;
+	width:7.675rem;
+}
+.share-dialog .share-copy-c input{
+	display: block;
+	width:100%;
+	height:0.9rem;
+	padding:0.175rem;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	line-height:1.2rem;
+	color:#555;
+	vertical-align: middle;
+	background:#fff;
+	border:1px solid #ccc;
+}
+.share-dialog .share-copy-c input:focus{
+	border-color:#333;
+	outline:0;
+}
+.share-dialog .share-copy-r{
+	float:left;
+	width:1.9rem;
+	text-align: right;
+	color:#f37b1d;
+	margin-top:0.2rem;
+	cursor:pointer;
+}
+.share-platform{
+	clear:both;
+	margin-top:0.25rem;
+}
+.share-platform .share-platform-l{
+	float:left;
+	width:1.925rem;
+	margin-top:0.2rem;
+}
+.share-platform .share-platform-r{
+	float:left;
+	width:7.75rem;
+}
+.share-platform .bdsharebuttonbox{
+	height:1.25rem;
+}
+.share-platform .bdsharebuttonbox a{
+	float:left;
+	width:0.875rem;
+	line-height:0.875rem;
+	height:0.875rem;
+	cursor:pointer;
+	margin:0.15rem 0.15rem 0.15rem 0;
+	text-indent:-100em;
+	overflow:hidden;
+}
+.share-platform .bd_weixin{
+	background:url(../images/css-bg.png) no-repeat -13px -7px;
+}
+.share-platform .bd_tsina{
+	background:url(../images/css-bg.png) no-repeat -57px -7px;
+}
+.share-platform .bd_sqq{
+	background:url(../images/css-bg.png) no-repeat -101px -7px;
+}
+.share-platform .bd_qzone{
+	background:url(../images/css-bg.png) no-repeat -146px -7px;
+}
+.share-platform .share-platform-text{
+	color:#aaa;
+	margin-top:0.125rem;
+}
