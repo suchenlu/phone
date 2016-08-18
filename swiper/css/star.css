@@ -1,102 +1,199 @@
 body {
-	padding-right:0px;padding-left:0px;font-size:12px;background:#333;padding-bottom:40px;margin:0px;line-height:14px;padding-top:40px
+	padding-right:0px;
+	padding-left:0px;
+	font-size:0.3rem;
+	background:#333;
+	padding-bottom:1.0rem;
+	margin:0px;
+	line-height:0.35rem;
+	padding-top:1.0rem;
 }
 form {
-	padding-right:0px;padding-left:0px;padding-bottom:0px;margin:0px;padding-top:0px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
 }
 ul {
-	padding-right:0px;padding-left:0px;padding-bottom:0px;margin:0px;padding-top:0px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
 }
 ol {
-	padding-right:0px;padding-left:0px;padding-bottom:0px;margin:0px;padding-top:0px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
 }
 h1 {
-	padding-right:0px;padding-left:0px;padding-bottom:0px;margin:0px;padding-top:0px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
 }
 h2 {
-	padding-right:0px;padding-left:0px;padding-bottom:0px;margin:0px;padding-top:0px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
 }
 h3 {
-	padding-right:0px;padding-left:0px;padding-bottom:0px;margin:0px;padding-top:0px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
 }
 h4 {
-	padding-right:0px;padding-left:0px;padding-bottom:0px;margin:0px;padding-top:0px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
 }
 h5 {
-	padding-right:0px;padding-left:0px;padding-bottom:0px;margin:0px;padding-top:0px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
 }
 h6 {
-	padding-right:0px;padding-left:0px;padding-bottom:0px;margin:0px;padding-top:0px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
 }
 p {
-	padding-right:0px;padding-left:0px;padding-bottom:0px;margin:0px;padding-top:0px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
 }
 input {
-	font-size:12px
+	font-size:0.3rem;
 }
 textarea {
-	font-size:12px
+	font-size:0.3rem;
 }
 select {
-	font-size:12px
+	font-size:0.3rem;
 }
 button {
-	font-size:12px
+	font-size:0.3rem;
 }
 img {
-	border-top-style:none;border-right-style:none;border-left-style:none;border-bottom-style:none
+	border-top-style:none;
+	border-right-style:none;
+	border-left-style:none;
+	border-bottom-style:none;
 }
 a{
-	color:#999;text-decoration:underline
+	color:#999;
+	text-decoration:underline;
 }
 
 #box {
-	border-right:#666 5px solid;border-top:#666 5px solid;background:#ccc;margin:0px auto;border-left:#666 5px solid;width:400px;border-bottom:#666 5px solid
+	border-right:#666 5px solid;
+	border-top:#666 5px solid;
+	background:#ccc;
+	margin:0px auto;
+	border-left:#666 5px solid;
+	width:10.0rem;
+	border-bottom:#666 5px solid;
 }
 #box H4 {
-	padding-right:10px;padding-left:10px;font-size:14px;background:#999;padding-bottom:0px;color:#fff;padding-top:8px;height:22px
+	padding-right:0.25rem;
+	padding-left:0.25rem;
+	font-size:0.35rem;
+	background:#999;
+	padding-bottom:0px;
+	color:#fff;
+	padding-top:0.2rem;
+	height:0.55rem;
 }
 #box .content {
-	padding-right:20px;padding-left:20px;padding-bottom:20px;padding-top:20px
+	padding-right:0.5rem;
+	padding-left:0.5rem;
+	padding-bottom:0.5rem;
+	padding-top:0.5rem;
 }
 address {
-	display:block;margin:20px auto 0px;width:400px
+	display:block;
+	margin:0.5rem auto 0px;
+	width:10.0rem;
 }
 #myPoint {
-	padding-right:0px;padding-left:0px;padding-bottom:15px;overflow:hidden;padding-top:0px;border-bottom:#ddd 1px solid;height:50px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0.375rem;
+	overflow:hidden;
+	padding-top:0px;
+	border-bottom:#ddd 1px solid;
+	height:1.25rem;
 }
 #myPoint span {
-	float:left;line-height:64px;font-family:Tahoma
+	float:left;
+	line-height:1.6rem;
+	font-family:Tahoma;
 }
 #myPoint span big {
-	font-weight:bold;font-size:60px
+	font-weight:bold;
+	font-size:1.5rem;
 }
 #myPoint span small {
-	font-size:30px
+	font-size:0.75rem;
 }
 #myPoint div {
-	font-size:14px;float:left;margin:10px 0px 0px 10px;height:40px
+	font-size:0.35rem;
+	float:left;
+	margin:0.25rem 0px 0px 0.25rem;
+	height:1.0rem;
 }
 #myPoint div img {
-	vertical-align:middle;margin-right:5px
+	vertical-align:middle;
+	margin-right:0.125rem
 }
 #doPoint p{
-	padding-right:0px;padding-left:0px;padding-bottom:10px;padding-top:10px
+	padding-right:0px;
+	padding-left:0px;
+	padding-bottom:0.25rem;
+	padding-top:0.25rem;
 }
 #doPoint tr td {
-	padding-right:5px;padding-left:5px;padding-bottom:3px;padding-top:3px
+	padding-right:0.125rem;
+	padding-left:0.125rem;
+	padding-bottom:0.075rem;
+	padding-top:0.075rem;
 }
 #doPoint tr td img {
-	margin-top:5px
+	margin-top:0.125rem;
 }
 #doPoint tr td strong {
-	font-size:14px;color:#f00
+	font-size:0.35rem;
+	color:#f00;
 }
 #doPoint span {
-	display:block;background:url(../images/star_small.gif) no-repeat 2px 0px;width:120px;height:20px
+	display:block;background:url(../images/star_small.gif) no-repeat 2px 0px;
+	width:3.0rem;
+	height:0.5rem;
 }
 #doPoint span small {
-	font-size:0px;float:left;overflow:hidden;width:12px;cursor:pointer;padding-top:20px;height:0px
+	font-size:0px;
+	float:left;
+	overflow:hidden;
+	width:0.3rem;
+	cursor:pointer;
+	padding-top:0.5rem;
+	height:0px;
 }
 #doPoint .star10 {
 	background:url(../images/star_small.gif) no-repeat 2px 0px
@@ -129,11 +226,12 @@ address {
 	background:url(../images/star_small.gif) no-repeat 2px -180px
 }
 form{
-	margin:15px 0px 0px
+	margin:0.375rem 0px 0px;
 }
 form label {
-	display:block;margin:5px 0px
+	display:block;
+	margin:0.125rem 0px;
 }
 form textarea {
-	width:350px
+	width:8.75rem;
 }
