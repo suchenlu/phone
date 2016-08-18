@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-type" content="text/html">
+	<title>评分</title>
+	<link rel="stylesheet" type="text/css" href="css/star.css">
+</head>
+<body>
+	<div id="box">
+		<h4>我的评分</h4>
+		<div class="content">	
+			<div id="myPoint">	
+				<span>	
+					<big>	5</big>
+					<small>	.0</small>
+				</span>
+				<div>
+					<img src="images/star5.gif">
+					<em>(一般)</em>
+				</div>
+			</div>
+			<div id="doPoint">	
+				<p>请点击以下星级进行评分：我的评分=(服务+质量+态度)/3</p>
+				<table cellspacing="0" cellpadding="0" border="0">
+					<tbody>	
+						<tr>
+							<th>服务：</th>
+							<td>
+								<span class="star5" id="item1"
+								v="5">
+									<small>1</small>
+									<small>2</small>
+									<small>3</small>
+									<small>4</small>
+									<small>5</small>
+									<small>6</small>
+									<small>7</small>
+									<small>8</small>
+									<small>9</small>
+									<small>10</small>	
+								</span>					
+							</td>
+							<td>	
+								<strong>5</strong>
+								<em>(一般)</em>
+							</td>
+						</tr>
+						<tr>
+							<th>物流：</th>
+							<td>						
+									<span class="star5" id="item2" v="5">
+									<small>1</small>
+									<small>2</small>
+									<small>3</small>
+									<small>4</small>
+									<small>5</small>
+									<small>6</small>
+									<small>7</small>
+									<small>8</small>
+									<small>9</small>
+									<small>10</small>	
+								</span>
+							</td>
+							<td>
+								<strong>5</strong>
+								<em>(一般)</em>
+							</td>
+						</tr>
+						<tr>
+							<th>水平：</th>
+							<td>
+								<span class="star5" id="item3" v="5">
+									<small>1</small>
+									<small>2</small>
+									<small>3</small>
+									<small>4</small>
+									<small>5</small>
+									<small>6</small>
+									<small>7</small>
+									<small>8</small>
+									<small>9</small>
+									<small>10</small>
+								</span>
+							</td>
+							<td>
+								<strong>5</strong>
+								<em>(一般)</em>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<form id="form1" name="form1" action="" method="get">
+				<input id="pointV1" type="hidden" name="pointV1">
+				<input id="pointV2" type="hidden" name="pointV2">
+				<input id="pointV3" type="hidden" name="pointV3">
+				<label>评论：
+					<textarea id="content" name="content" row="5" col="50">	</textarea>
+				</label>
+				<button type="submit">提交</button>
+			</form>
+		</div>	
+	</div>
+	<script type="text/javascript" src="js/jquery-latest.pack.js"></script>	
+	<script type="text/javascript" src="js/star.js"></script>
+</body>
+</html>
