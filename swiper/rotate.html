@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+	<title>转盘</title>
+	<link rel="stylesheet" type="text/css" href="css/rotate.css">
+</head>
+<body>
+	<div class="rotate_wrap">
+		<img src="images/img1.png" id="bg" class="bg_img rotate_bg" alt="">
+		<img src="images/img2.png" id="cont" class="cont_img rotate_cont">
+	</div>
+	<div class="btn" id="btn">开始</div>
+	<div class="back" id="back">退出</div>
+	<div class="overfloat" id="i_close_cont">
+		<div class="overfloat_cont">
+			<div class="btn" id="i_close">立即返回</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		var result_angle=[{a:0,p:0.1,t:'恭喜！你中大奖了！'},{a:45,p:0.1,t:'恭喜！你中奖了！'},{a:90,p:0.1,t:'好样的！继续加油！'},{a:135,p:0.1,t:'再一次！'},{a:180,p:0.1,t:'心情不错啊！'},{a:225,p:0.15,t:'继续努力！'},{a:270,p:0.15,t:'再接再励！'},{a:315,p:0.2,t:'谢谢参与！'}];
+		var rotate={
+			rotate_angle:0,
+			flag_click:true,
+			calculate_result:function(type,during_time){
+				var self=this;
+				type=type||0;
+				during_time=during_time||1;
+				var rand_num=Math.ceil(Math.random()*100);
+				var result_index;
+				var start_pos=end_pos=0;
+				for(var i in result_angle){
+					start_pos=end_pos+1;
+					end_pos=end_pos+100*result_angle[i].p;
+					if(rand_num>=start_pos&&rand_num<=end_pos){
+						result_index=i;
+						break;
+					}
+				}
+				var rand_circle=Math.ceil(Math.random()*2)+1;
+				self.flag_click=false;
+				if(type==1){
+					self.rotate_angle=self.rotate_angle-rand_circle*360-result_angle[result_index].a-self.rotate_angle%360;
+					$('#bg').css({
+						'transform':'rotate('+self.rotate_angle+'deg)',
+						'-ms-transform':'rotate('+self.rotate_angle+'deg)',
+						'-webkit-transform':'rotate('+self.rotate_angle+'deg)',
+						'-moz-transform':'rotate('+self.rotate_angle+'deg)',
+						'-o-transform':'rotate('+self.rotate_angle+'deg)',
+						'transition': 'transform ease-out '+during_time+'s',
+						'-moz-transition': '-moz-transform ease-out '+during_time+'s',
+						'-webkit-transition': '-webkit-transform ease-out '+during_time+'s',
+						'-o-transition': '-o-transform ease-out '+during_time+'s',
+					});
+				}else{
+					self.rotate_angle=self.rotate_angle+rand_circle*360+result_angle[result_index].a-self.rotate_angle%360;
+					$('#cont').css({
+						'transform':'rotate('+self.rotate_angle+'deg)',
+						'-ms-transform':'rotate('+self.rotate_angle+'deg)',
+						'-webkit-transform':'rotate('+self.rotate_angle+'deg)',
+						'-moz-transform':'rotate('+self.rotate_angle+'deg)',
+						'-o-transform':'rotate('+self.rotate_angle+'deg)',
+						'transition': 'transform ease-out '+during_time+'s',		
+						'-moz-transition': '-moz-transform ease-out '+during_time+'s',
+						'-webkit-transition': '-webkit-transform ease-out '+during_time+'s',
+						'-o-transition': '-o-transform ease-out '+during_time+'s',
+					});
+				}
+				setTimeout(function(){
+					self.flag_click=true;
+					alert(result_angle[result_index].t);
+				},during_time*1000);
+			}
+		}
+		$(document).ready(function(){
+			$('#btn').click(function(){
+				if(rotate.flag_click){
+					rotate.calculate_result(1,1);
+				}
+			});
+			$("#back").click(function(){
+				$("#i_close_cont").show();
+			});
+			$("#i_close").click(function(){
+				$("#i_close_cont").hide();
+			})
+		})
+	</script>
+	<script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>
