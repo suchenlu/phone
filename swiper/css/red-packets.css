@@ -122,6 +122,7 @@ body{background:transparent;}
 	text-align: center;
 	height:49px;
 	line-height:49px;
+	z-index:111111;
 }
 .am-navbar-nav a{
 	width:50px;
