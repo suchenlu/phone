@@ -128,3 +128,7 @@ body{background:transparent;}
 	width:50px;
 	text-align: center;
 }
+.am-with-fixed-navbar{
+	background:none;
+	padding-bottom:0;
+}
