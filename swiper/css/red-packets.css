@@ -114,3 +114,16 @@ body{background:transparent;}
 	color:rgba(255,255,255,.75);
 	margin:0 0.125rem;
 }
+.am-navbar-default{
+	position:fixed;
+	top:0;
+	right:0;
+	width:50px;
+	text-align: center;
+	height:49px;
+	line-height:49px;
+}
+.am-navbar-nav a{
+	width:50px;
+	text-align: center;
+}

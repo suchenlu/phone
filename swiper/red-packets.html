@@ -8,6 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no" />
 	<title>红包</title>
+	<link rel="stylesheet" type="text/css" href="css/amazeui.min.css">
 	<link rel="stylesheet" type="text/css" href="css/red-packets.css">
 	<style type="text/css">
 		.body{
@@ -21,6 +22,23 @@
 </head>
 <body>
 	<div class="body">
+	<div data-am-widget="navbar" class="am-cf am-navbar-default am-no-layout">
+		<ul class="am-navbar-nav am-cf am-avg-sm-4">
+			<li data-am-navbar-share>
+				<a href="javascript:;">
+					<img src="images/share.png">
+					<span class="am-navbar-label">分享</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+		<div class="share-platform">
+				<div class="share-platform-r">
+					<div class="bdsharebuttonbox">
+						<a href="#" class="bd_weixin" data-cmd="weixin" title="分享微信"></a>
+					</div>
+				</div>
+			</div>
 		<div class="crush"></div>
 		<dl class="main">
 			<dt>给你发一个红包</dt>
@@ -35,6 +53,7 @@
 <input type="hidden" name="" id="followurl" value="">
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/amazeui.min.js"></script>
 <script type="text/javascript">
 	var count=0;
 	$('.crush').click(function(e){
@@ -54,7 +73,7 @@
 		$('body').append('<div class="share" onclick="remove(this)">\<img src="images/share1.png"/>\<div class="clear"></div>\<p class="tr">点击右上角</p>\<p class="tr">发给你要整蛊的人</p></div>')
 	}
 	function prompt(){
-		$('body').append('<div class="prompt">\<div class="cont">\<div class="space_30"></div>\<p>只是一个玩笑</p>\<div class="space_30"></div>\<a class="btn" onclick="share()">我也要整蛊</a>\</div>\<div class="bg"></div>\</div>')
+		$('body').append('<div class="prompt">\<div class="cont">\<div class="space_30"></div>\<p>只是一个玩笑,逗你呢！哈哈！</p>\<div class="space_30"></div>\<a class="btn" onclick="share()">我也要整蛊</a>\</div>\<div class="bg"></div>\</div>')
 	}
 </script>
 <script>
