@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="css/eyes.css">
+	<title>eyes</title>
+</head>
+<body>
+	<div id="back">
+		<h1><a href="">重新开始</a></h1>
+	</div>
+	<div class="container">
+		<div class="left">
+			<span>剩余时间：</span>
+			<span id="sec">30</span>s
+		</div>
+		<div class="right">
+			<span>分数：</span>
+			<span id="score">0</span>
+		</div>
+		<div class="main">
+			<ul>
+				<li class="list1"><img src="images/2.png"></li>
+			</ul>
+		</div>
+		<button>点 击 开 始 游 戏</button>
+		<button id="turnOff">护眼模式</button>
+	</div>
+	<script type="text/javascript">
+		var btn=document.querySelector('button');
+		var z=30.00;
+		var sec=document.getElementById('sec');
+		var uls=document.querySelector('ul');
+		var li_1=document.getElementsByClassName('list1')[0];
+		var score=document.getElementById('score');
+		var level=1;
+		var n=0;
+		var turnOff=document.getElementById('turnOff');
+		turnOff.onclick=function(){
+			document.body.style.background='rgb(199,237,204)';
+			turnOff.innerHTML='普通模式';
+			turn();
+		}
+		function turn(){
+			turnOff.onclick=function(){
+				document.body.style.background='';
+				turnOff.innerHTML='护眼模式';
+				turnOff.onclick=function(){
+					document.body.style.background='rgb(199,237,204)';
+					turnOff.innerHTML='普通模式';
+					turn();
+				}
+			}
+		}
+		var back=document.getElementById('back');
+		btn.onclick=function(){
+			var timer=setInterval(function(){
+				z-=0.01;
+				z=z.toFixed(2);
+				sec.innerHTML=z;
+				if(z<=0){
+					clearInterval(timer);
+					if(n<8){
+						alert('GAME OVER!'+''+'等级：睁眼瞎');
+					}else if(n>=20){
+						alert('GAME OVER!'+''+'等级：神眼');
+					}else if(n>=12){
+						alert('GAME OVER!'+''+'等级：火眼金睛');
+					}else{
+						alert('GAME OVER!'+''+'等级：近视');
+					}
+					back.style.display='block';
+				}
+			},10)
+			btn.remove();
+			li_1.remove();
+			turnOff.remove();
+			app();
+			function app(){
+				level+=1;
+				for(var i=0;i<level*level;i++){
+					var newLi=document.createElement('li');
+					uls.appendChild(newLi);
+					var newImg=document.createElement('img');
+					newLi.appendChild(newImg);
+					newLi.style.width=100/level+'%';
+					newLi.style.float='left';
+					newLi.style.display='block';
+					newImg.style.width=100+'%';
+					newImg.src='images/1.png';
+					newLi.style.backgroundColor='rgb('+rand(50,255)+','+rand(50,255)+','+rand(50,255)+')';
+				}
+				var x=rand(0,level*level-1);
+				var imgs1=document.querySelectorAll('img');
+				imgs1[x].src="images/2.png";
+				var li=document.querySelectorAll('li');
+				li[x].onclick=function(){
+					for(var i=0;i<level*level;i++){
+						li[i].remove(this);
+					}
+					n+=1;
+					score.innerHTML=n;
+					if(level>10){
+						level=10;
+					}
+					app();
+				}
+			}
+		}
+		function rand(min,max){
+			return Math.round(Math.random()*(max-min)+min);
+		}
+	</script>
+	<script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>
