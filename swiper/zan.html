@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点赞</title>
+	<link rel="stylesheet" type="text/css" href="css/amazeui.min.css">
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		a,i,s,b{
+			font-style: none;
+			text-decoration: none;
+		}
+		body{
+			background-color:#1faeff;
+		}
+		.opera{
+			width:90px;
+			height:36px;
+			line-height:36px;
+			margin:50px auto;
+			color:#fff;
+		}
+		.opera a{
+			color:#fff;
+		}
+		.opera span{
+			cursor: pointer;
+		}
+		.num{
+			top:-30px;
+		}
+		@-webkit-keyframes niceIn{
+			0%{
+				opacity: 1;
+				transform: scale(1);
+				-webkit-transform: scale(1);
+			}
+			50%{
+				transform: scale(1.5);
+				-webkit-transform: scale(1.5);
+			}
+			70%{
+				transform: scale(0.8);
+				-webkit-transform: scale(0.8);
+			}
+			100%{
+				transform: scale(1);
+				-webkit-transform: scale(1);
+			}
+		}
+		@keyframes niceIn{
+			0%{
+				opacity:1;
+				transform: scale(1);
+				-webkit-transform: scale(1);
+				-ms-transform: scale(1);
+			}
+			50%{
+				opacity:1;
+				transform: scale(1.5);
+				-webkit-transform: scale(1.5);
+				-ms-transform: scale(1.5);
+			}
+			70%{
+				transform: scale(0.8);
+				-webkit-transform: scale(0.8);
+				-ms-transform: scale(0.8);
+			}
+			100%{
+				opacity: 1;
+				transform: scale(1);
+				-webkit-transform: scale(1);
+				-ms-transform: scale(1);
+			}
+		}
+		.niceIn{
+			animation: niceIn 0.8s 0.2s ease;
+			-webkit-animation: niceIn 0.8s 0.2s ease;
+			-moz-animation:niceIn 0.8s 0.2s ease;
+			-o-animation:niceIn 0.8s 0.2s ease;
+		}
+	</style>
+</head>
+<body>
+	<div class="opera">	
+		<span id="btn">
+			<i class="am-icon-thumbs-up"></i>
+			<a id="number">1</a>
+		</span>
+	</div>	
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/amazeui.min.js"></script>
+	<script type="text/javascript">
+		(function($){
+			$.extend({
+				tipsBox:function(options){
+					options=$.extend({
+						obj:null,
+						str:"+1",
+						startSize:"30px",
+						interval:600,
+						color:'#f00',
+						callback:function(){}
+					},options);
+					$("body").append("<span class='num'>"+options.str+"</span>");
+					var box=$(".num");
+					var left=options.obj.offset().left+options.obj.width()/2;
+					var top=options.obj.offset().top-options.obj.height();
+					box.css({
+						"position":"absolute",
+						"left":left+"px",
+						"top":top+"px",
+						"z-index":9999,
+						"font-size":options.startSize,
+						"line-height":options.endSize,
+						"color":options.color		
+					});
+					box.animate({
+						"font-size":options.endSize,
+						"opacity":"0",
+						"top":top-parseInt(options.endSize)+"px"
+					},options.interval,function(){
+						box.remove();
+						options.callback();
+					});
+				}
+			});
+		})($);
+		function niceIn(prop){
+			prop.find('i').addClass('niceIn');
+			setTimeout(function(){
+				prop.find('i').removeClass('niceIn');
+			},1000);
+		}
+		$(function(){
+			$("#btn").click(function(){
+				var n=parseInt($("#number").html());
+				$("#number").html(n+1);
+				$.tipsBox({
+					obj:$(this),
+					str:"+1",
+					callback:function(){}
+				});
+				niceIn($(this));
+			});
+		});
+	</script>	
+</body>
+</html>
